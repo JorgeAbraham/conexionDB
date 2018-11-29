@@ -46,7 +46,7 @@ public class conexionBD
     	{
            
             Class.forName(Datos.getDriverBD());
-            conn = DriverManager.getConnection(Datos.getDbURL()+NombreBD, Datos.getDbUserName(),Datos.getDbPassword());
+            conn = DriverManager.getConnection(Datos.getDbURL()+NombreBD+"?autoReconnect=true", Datos.getDbUserName(),Datos.getDbPassword());
             System.out.println("Conexion exitosa a: "+NombreBD);
       	}
     	catch (ClassNotFoundException | SQLException e) 
